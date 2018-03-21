@@ -8,7 +8,7 @@ React hovering on two elements made simpler!
 yarn add rehover
 ```
 
-#### Use it!
+#### Usage
 
 ```js
 import React from "react";
@@ -16,16 +16,14 @@ import Rehover from "rehover";
 ```
 
 ```jsx
-    <Rehover delay={150}>
-      <button source>
-        Hover me!
-      </button>
-      <div destination>
-        <a href="#">A</Item>
-        <a href="#">B</Item>
-        <a href="#">C</Item>
-      </div>
-    </Rehover>
+<Rehover delay={150}>
+  <button source>Hover me!</button>
+  <div destination>
+    <a href="#">A</a>
+    <a href="#">B</a>
+    <a href="#">C</a>
+  </div>
+</Rehover>
 ```
 
 #### Live demo/Sandbox
