@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 
-class Hover extends Component {
+class ReHover extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,34 +9,50 @@ class Hover extends Component {
       isOnSource: false,
       isOpen: false
     };
+    this.props.states(this.state);
   }
 
   onMouseEnterSource = () => {
-    this.setState({
-      isOpen: true,
-      isOnSource: true
-    });
+    this.setState(
+      {
+        isOpen: true,
+        isOnSource: true
+      },
+      () => this.props.states(this.state)
+    );
   };
 
   onMouseLeaveSource = () => {
     setTimeout(() => {
-      this.setState({
-        isOnSource: false
-      });
+      this.setState(
+        prevState => ({
+          isOnSource: false,
+          isOpen: !prevState.isOnTarget ? false : true
+        }),
+        () => this.props.states(this.state)
+      );
     }, this.props.delay);
   };
 
   onMouseEnterTarget = () => {
-    this.setState({
-      isOnTarget: true
-    });
+    this.setState(
+      {
+        isOnSource: false,
+        isOnTarget: true,
+        isOpen: true
+      },
+      () => this.props.states(this.state)
+    );
   };
 
   onMouseLeaveTarget = () => {
-    this.setState({
-      isOnTarget: false,
-      isOpen: false
-    });
+    this.setState(
+      prevState => ({
+        isOnTarget: false,
+        isOpen: !prevState.isOnSource ? false : true
+      }),
+      () => this.props.states(this.state)
+    );
   };
 
   render() {
@@ -46,7 +62,8 @@ class Hover extends Component {
         return child.props.source
           ? React.cloneElement(child, {
               onMouseEnter: this.onMouseEnterSource,
-              onMouseLeave: this.onMouseLeaveSource
+              onMouseLeave: this.onMouseLeaveSource,
+              isOnSource: this.state.isOnSource
             })
           : child.props.destination
             ? React.cloneElement(child, {
@@ -56,18 +73,15 @@ class Hover extends Component {
             : null;
       }
     );
-    return (
-      <div>
-        {this.state.isOnSource || this.state.isOnTarget
-          ? ChildrenWithMouseEvent.slice(0, 2)
-          : ChildrenWithMouseEvent.slice(0, 1)}
-      </div>
-    );
+    return this.state.isOnSource || this.state.isOnTarget
+      ? ChildrenWithMouseEvent.slice(0, 2)
+      : ChildrenWithMouseEvent.slice(0, 1);
   }
 }
 
-Hover.propTypes = {
-  delay: PropTypes.number
+ReHover.propTypes = {
+  delay: PropTypes.number,
+  states: PropTypes.func
 };
 
-export default Hover;
+export default ReHover;
