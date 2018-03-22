@@ -2,6 +2,8 @@
 
 #### React hovering on two elements made simpler!
 
+![](demo.gif)
+
 ## Install
 
 ```sh
