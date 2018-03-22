@@ -9,7 +9,7 @@ class ReHover extends Component {
       isOnSource: false,
       isOpen: false
     };
-    this.props.states(this.state);
+    this.props.states ? this.props.states(this.state) : null;
   }
 
   onMouseEnterSource = () => {
@@ -18,7 +18,7 @@ class ReHover extends Component {
         isOpen: true,
         isOnSource: true
       },
-      () => this.props.states(this.state)
+      () => (this.props.states ? this.props.states(this.state) : null)
     );
   };
 
@@ -29,7 +29,7 @@ class ReHover extends Component {
           isOnSource: false,
           isOpen: !prevState.isOnTarget ? false : true
         }),
-        () => this.props.states(this.state)
+        () => (this.props.states ? this.props.states(this.state) : null)
       );
     }, this.props.delay);
   };
@@ -41,7 +41,7 @@ class ReHover extends Component {
         isOnTarget: true,
         isOpen: true
       },
-      () => this.props.states(this.state)
+      () => (this.props.states ? this.props.states(this.state) : null)
     );
   };
 
@@ -51,7 +51,7 @@ class ReHover extends Component {
         isOnTarget: false,
         isOpen: !prevState.isOnSource ? false : true
       }),
-      () => this.props.states(this.state)
+      () => (this.props.states ? this.props.states(this.state) : null)
     );
   };
 
