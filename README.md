@@ -37,6 +37,8 @@ import Rehover from "rehover";
 * States: Function `states`
   * Function with `isOpen`, `isOntarget` and `isOnSource` as parameter `Boolean`, to let you construct animation for example.
 
+> If you want to pass a **_React Component_** as a source or destination, make sure that they got a onMouseEnter props and a onMouseLeave props at their root.
+
 ## Live demo/Sandbox
 
 [![Edit j2rjln010w](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/0o78oxx3w0)
