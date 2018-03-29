@@ -62,8 +62,7 @@ class ReHover extends Component {
         return child.props.source
           ? React.cloneElement(child, {
               onMouseEnter: this.onMouseEnterSource,
-              onMouseLeave: this.onMouseLeaveSource,
-              isOnSource: this.state.isOnSource
+              onMouseLeave: this.onMouseLeaveSource
             })
           : child.props.destination
             ? React.cloneElement(child, {
@@ -75,7 +74,10 @@ class ReHover extends Component {
     );
     return this.state.isOnSource || this.state.isOnTarget
       ? ChildrenWithMouseEvent.slice(0, 2)
-      : ChildrenWithMouseEvent.slice(0, 1);
+      : ChildrenWithMouseEvent.splice(
+          ChildrenWithMouseEvent.findIndex(elem => elem.props.source),
+          1
+        );
   }
 }
 

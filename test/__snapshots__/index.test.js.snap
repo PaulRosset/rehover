@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing the normal working SnapShot 1`] = `
+<div>
+  <p
+    source="true"
+  >
+    Source React element
+  </p>
+  <div
+    destination="true"
+  >
+    Destination React element
+  </div>
+</div>
+`;
