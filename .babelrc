@@ -1,8 +1,3 @@
 {
-  "presets": [["env"], "react-app"],
-  "plugins": [
-    ["transform-class-properties"],
-    ["transform-regenerator"],
-    ["transform-object-rest-spread", { "useBuiltIns": true }]
-  ]
+  "presets": ["es2015", "react-app"]
 }
