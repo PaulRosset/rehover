@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-class ReHover extends Component {
+export default class ReHover extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -85,5 +85,3 @@ ReHover.propTypes = {
   delay: PropTypes.number,
   states: PropTypes.func
 };
-
-export default ReHover;
