@@ -1,6 +1,6 @@
 {
   "name": "rehover",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "React hovering on two elements made simpler!",
   "main": "./lib/index.js",
   "scripts": {
