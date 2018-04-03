@@ -2,6 +2,9 @@
 
 #### React hovering on two elements made simpler!
 
+![Travis branch](https://img.shields.io/travis/PaulRosset/rehover/master.svg)
+[![npm version](https://badge.fury.io/js/rehover.svg)](https://badge.fury.io/js/rehover)
+
 ![](demo.gif)
 
 ## Install
@@ -11,6 +14,8 @@ yarn add rehover
 ```
 
 ## Usage
+
+> React v16.0 required, ![rendering arrays in render method](https://reactjs.org/blog/2017/09/26/react-v16.0.html)
 
 ```js
 import React from "react";
