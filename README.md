@@ -2,7 +2,7 @@
 
 #### React hovering on two elements made simpler!
 
-[![Travis branch](https://img.shields.io/travis/PaulRosset/rehover/master.svg)](https://travis-ci.org/PaulRosset/rehover)
+[![Travis CI Build Status](https://travis-ci.org/PaulRosset/rehover.svg?branch=master)](https://travis-ci.org/PaulRosset/rehover)
 [![npm version](https://badge.fury.io/js/rehover.svg)](https://badge.fury.io/js/rehover)
 
 ![](demo.gif)
