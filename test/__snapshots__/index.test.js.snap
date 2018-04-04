@@ -1,16 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Testing the normal working SnapShot 1`] = `
-<div>
+exports[`Testing the normal working Snapshot testing... Shot Only Source, when MouseLeaving 1`] = `
+<p
+  aria-hidden={false}
+  onKeyDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  role="source"
+  source="true"
+  tabIndex={0}
+>
+  Source React element
+</p>
+`;
+
+exports[`Testing the normal working Snapshot testing... Shot Props passed 1`] = `
+Object {
+  "children": Array [
+    <p
+      source="true"
+    >
+      Source React element
+    </p>,
+    <div
+      destination="true"
+    >
+      Destination React element
+    </div>,
+  ],
+  "delay": 150,
+}
+`;
+
+exports[`Testing the normal working Snapshot testing... Shot both children nodes, when mouseEntering 1`] = `
+Array [
   <p
+    aria-hidden={false}
+    onKeyDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    role="source"
     source="true"
+    tabIndex={0}
   >
     Source React element
-  </p>
+  </p>,
   <div
+    aria-hidden={false}
     destination="true"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    role="destination"
   >
     Destination React element
-  </div>
-</div>
+  </div>,
+]
 `;

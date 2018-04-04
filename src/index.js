@@ -46,13 +46,40 @@ export default class ReHover extends Component {
   };
 
   onMouseLeaveTarget = () => {
-    this.setState(
-      prevState => ({
-        isOnTarget: false,
-        isOpen: !prevState.isOnSource ? false : true
-      }),
-      () => (this.props.states ? this.props.states(this.state) : null)
-    );
+    setTimeout(() => {
+      this.setState(
+        prevState => ({
+          isOnTarget: false,
+          isOpen: !prevState.isOnSource ? false : true
+        }),
+        () => (this.props.states ? this.props.states(this.state) : null)
+      );
+    }, this.props.delay);
+  };
+
+  onKeyBoardSource = e => {
+    switch (e.keyCode) {
+      case 40:
+        this.setState(
+          {
+            isOpen: true,
+            isOnTarget: true
+          },
+          () => (this.props.states ? this.props.states(this.state) : null)
+        );
+        break;
+      case 38:
+        this.setState(
+          {
+            isOpen: false,
+            isOnTarget: false
+          },
+          () => (this.props.states ? this.props.states(this.state) : null)
+        );
+        break;
+      default:
+        break;
+    }
   };
 
   render() {
@@ -62,12 +89,18 @@ export default class ReHover extends Component {
         return child.props.source
           ? React.cloneElement(child, {
               onMouseEnter: this.onMouseEnterSource,
-              onMouseLeave: this.onMouseLeaveSource
+              onMouseLeave: this.onMouseLeaveSource,
+              onKeyDown: this.onKeyBoardSource,
+              role: "source",
+              tabIndex: 0,
+              "aria-hidden": false
             })
           : child.props.destination
             ? React.cloneElement(child, {
                 onMouseEnter: this.onMouseEnterTarget,
-                onMouseLeave: this.onMouseLeaveTarget
+                onMouseLeave: this.onMouseLeaveTarget,
+                role: "destination",
+                "aria-hidden": !this.state.isOpen
               })
             : null;
       }
