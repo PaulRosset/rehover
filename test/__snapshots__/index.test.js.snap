@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Testing the normal working Snapshot testing... Shot Only Source, when MouseLeaving 1`] = `
+exports[`Testing Rehover with Children Compound Testing the normal working Snapshot testing... Shot Only Source, when MouseLeaving 1`] = `
 <p
   aria-hidden={false}
   onKeyDown={[Function]}
@@ -14,7 +14,7 @@ exports[`Testing the normal working Snapshot testing... Shot Only Source, when M
 </p>
 `;
 
-exports[`Testing the normal working Snapshot testing... Shot Props passed 1`] = `
+exports[`Testing Rehover with Children Compound Testing the normal working Snapshot testing... Shot Props passed 1`] = `
 Object {
   "children": Array [
     <p
@@ -33,7 +33,7 @@ Object {
 }
 `;
 
-exports[`Testing the normal working Snapshot testing... Shot both children nodes, when mouseEntering 1`] = `
+exports[`Testing Rehover with Children Compound Testing the normal working Snapshot testing... Shot both children nodes, when mouseEntering 1`] = `
 Array [
   <p
     aria-hidden={false}

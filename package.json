@@ -1,8 +1,8 @@
 {
   "name": "rehover",
-  "version": "0.3.6",
+  "version": "0.4.0",
   "description": "React hovering on two elements made simpler!",
-  "main": "./lib/index.js",
+  "main": "./lib/main.js",
   "scripts": {
     "dev":
       "BABEL_ENV=development ./node_modules/.bin/babel --watch ./src/ --out-dir ./lib",
@@ -24,7 +24,7 @@
   "homepage": "https://github.com/PaulRosset/rehover#readme",
   "dependencies": {
     "prop-types": "^15.6.1",
-    "react": "^16.2.0"
+    "react": "^16.3.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -36,7 +36,7 @@
     "eslint-plugin-prettier": "^2.6.0",
     "jest": "^22.4.3",
     "prettier": "^1.11.1",
-    "react-dom": "^16.3.0",
+    "react-dom": "^16.3.2",
     "react-test-renderer": "^16.3.1",
     "react-testing-library": "^1.9.0"
   }
