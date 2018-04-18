@@ -29,6 +29,7 @@ Object {
     </div>,
   ],
   "delay": 150,
+  "states": [Function],
 }
 `;
 

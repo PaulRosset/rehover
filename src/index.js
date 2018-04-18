@@ -9,7 +9,7 @@ export default class ReHover extends Component {
       isOnSource: false,
       isOpen: false
     };
-    this.props.states ? this.props.states(this.state) : null;
+    this.props.states(this.state);
   }
 
   onMouseEnterSource = () => {
@@ -18,7 +18,7 @@ export default class ReHover extends Component {
         isOpen: true,
         isOnSource: true
       },
-      () => (this.props.states ? this.props.states(this.state) : null)
+      () => this.props.states(this.state)
     );
   };
 
@@ -29,7 +29,7 @@ export default class ReHover extends Component {
           isOnSource: false,
           isOpen: !prevState.isOnTarget ? false : true
         }),
-        () => (this.props.states ? this.props.states(this.state) : null)
+        () => this.props.states(this.state)
       );
     }, this.props.delay);
   };
@@ -41,7 +41,7 @@ export default class ReHover extends Component {
         isOnTarget: true,
         isOpen: true
       },
-      () => (this.props.states ? this.props.states(this.state) : null)
+      () => this.props.states(this.state)
     );
   };
 
@@ -52,7 +52,7 @@ export default class ReHover extends Component {
           isOnTarget: false,
           isOpen: !prevState.isOnSource ? false : true
         }),
-        () => (this.props.states ? this.props.states(this.state) : null)
+        () => this.props.states(this.state)
       );
     }, this.props.delay);
   };
@@ -65,7 +65,7 @@ export default class ReHover extends Component {
             isOpen: true,
             isOnTarget: true
           },
-          () => (this.props.states ? this.props.states(this.state) : null)
+          () => this.props.states(this.state)
         );
         break;
       case 38:
@@ -74,7 +74,7 @@ export default class ReHover extends Component {
             isOpen: false,
             isOnTarget: false
           },
-          () => (this.props.states ? this.props.states(this.state) : null)
+          () => this.props.states(this.state)
         );
         break;
       default:
@@ -113,6 +113,11 @@ export default class ReHover extends Component {
         );
   }
 }
+
+ReHover.defaultProps = {
+  delay: 0,
+  states: () => {}
+};
 
 ReHover.propTypes = {
   delay: PropTypes.number,
