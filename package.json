@@ -4,18 +4,18 @@
   "description": "React hovering on two elements made simpler!",
   "main": "./lib/main.js",
   "scripts": {
-    "dev":
-      "BABEL_ENV=development ./node_modules/.bin/babel --watch ./src/ --out-dir ./lib",
-    "build":
-      "BABEL_ENV=production ./node_modules/.bin/babel ./src/ --out-dir ./lib",
-    "test":
-      "./node_modules/.bin/eslint src/ && ./node_modules/.bin/jest --coverage"
+    "dev": "BABEL_ENV=development ./node_modules/.bin/babel --watch ./src/ --out-dir ./lib",
+    "build": "BABEL_ENV=production ./node_modules/.bin/babel ./src/ --out-dir ./lib",
+    "test": "./node_modules/.bin/eslint src/ && ./node_modules/.bin/jest --coverage"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/PaulRosset/rehover.git"
   },
-  "keywords": ["react", "hover"],
+  "keywords": [
+    "react",
+    "hover"
+  ],
   "author": "Paul Rosset <paulrosset96@gmail.com>",
   "license": "MIT",
   "bugs": {
